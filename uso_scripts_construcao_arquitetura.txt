@@ -1,0 +1,15 @@
+PASSOS:
+
+1) Importar o script function_names_extractor.py para a pasta ROOT do software
+2) Abrir o script function_names_extractor.py e RUN
+3) Verificar se dois arquivos foram criados na pasta ROOT:
+    directores_and_files.json -> arquivo json com discretizando todas funções em cada arquivo .py do software
+    directores.json -> arquivo json com todos os diretorios do software rastreados pelo script function_names_extractor.py
+    Importante não alterar o nome desses arquivos
+4) Adicionar as seguintes linhas no if __name__ == '__main__' do script principal do software (e.g. main.py):
+    tf = TraceFunc()
+    sys.setprofile(tf.tracefunc)
+    tf.formatting_dataframe()
+5) Adicionar as seguintes linhas:
+    import sys
+    from test import TraceFunc
